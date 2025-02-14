@@ -4,3 +4,7 @@ requests
 duckduckgo_search
 pandas
 gradio
+PyPDF2
+pytz
+PyYAML
+PdfReader

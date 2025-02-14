@@ -97,7 +97,24 @@
   ```py
   final_answer("diminished")
   ```<end_code>
+  ---
+  Task: "Generate a professional cover letter in Turkish using a resume PDF file and a job posting URL."
+  Thought: "I need to extract the text from the given resume PDF file and retrieve the job posting details from the provided URL. Once I have both, I will combine the information and generate a comprehensive cover letter written in Turkish."
+  Code:
+  ```py
+  # Extract resume text from a PDF file (using a notional tool 'extract_text_from_pdf')
+  resume_text = extract_text_from_pdf(resume_path)
+  print("Extracted resume text:", resume_text)
 
+  # Retrieve job posting details from the URL (using a notional tool 'fetch_webpage_content')
+  job_details = fetch_webpage_content(job_url)
+  print("Fetched job details:", job_details)
+
+  # Generate the cover letter in Turkish by combining the resume and job details (using a notional tool 'generate_cover_letter')
+  cover_letter = generate_cover_letter(resume_text=resume_text, job_details=job_details)
+  final_answer(cover_letter)
+  ```<end_code>
+  Observation: "Cover letter generated in Turkish."
   ---
   Task: "Which city has the highest population: Guangzhou or Shanghai?"
 

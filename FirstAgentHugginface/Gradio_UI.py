@@ -259,13 +259,13 @@ class GradioUI:
                 resizeable=True,
                 scale=1,
             )
-            # If an upload folder is provided, enable the upload feature
+            # Eğer yükleme klasörü tanımlandıysa, sadece PDF dosyalarını kabul eden bir yükleme butonu ekliyoruz
             if self.file_upload_folder is not None:
-                upload_file = gr.File(label="Upload a file")
+                pdf_upload = gr.File(label="Upload a PDF", file_types=[".pdf"])
                 upload_status = gr.Textbox(label="Upload Status", interactive=False, visible=False)
-                upload_file.change(
+                pdf_upload.change(
                     self.upload_file,
-                    [upload_file, file_uploads_log],
+                    [pdf_upload, file_uploads_log],
                     [upload_status, file_uploads_log],
                 )
             text_input = gr.Textbox(lines=1, label="Chat Message")
@@ -274,8 +274,8 @@ class GradioUI:
                 [text_input, file_uploads_log],
                 [stored_messages, text_input],
             ).then(self.interact_with_agent, [stored_messages, chatbot], [chatbot])
-
-        demo.launch(debug=True, share=True, **kwargs)
+            
+            demo.launch(debug=True, share=True, **kwargs)
 
 
 __all__ = ["stream_to_gradio", "GradioUI"]

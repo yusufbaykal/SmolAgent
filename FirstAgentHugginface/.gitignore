@@ -1,0 +1,5 @@
+.venv
+uploads
+FirstAgentHugginface.egg-info
+.gradio
+__pycache__
